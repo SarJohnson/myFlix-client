@@ -1,16 +1,33 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MovieCard } from "../movie-card/movie-card.jsx";
 import { MovieView } from "../movie-view/movie-view.jsx";
 
 export const MainView = () => {
-    const [movies, setMovies] = useState([
-        { id: 1, title: "The Exorcist", subgenre: "Demonic Possession", director: "William Friedkin" },
-        { id: 2, title: "Paranormal Activity", subgenre: "Found Footage", director: "Oren Peli" },
-        { id: 3, title: "The Blair Witch Project", subgenre: "Found Footage", director: "Eduardo Sanchez" },
-        { id: 4, title: "Krampus", subgenre: "Monster", director: "Michael Dougherty" },
-        { id: 5, title: "The Shining", subgenre: "Psychological", director: "Stanley Kubrick" }
-    ]);
+    const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
+    useEffect(() => {
+        fetch("https://sarjohnsonmyflix-4f5de10aa490.herokuapp.com/movies")
+        .then((response) => response.json())
+        .then((data) => {
+            const moviesFromApi = data.docs.map((doc) => 
+            {
+                return {
+                    _id: doc._id,
+                    Title: doc.Title,
+                    Description: doc.Description,
+                    Subgenre: {
+                        Name: doc.Subgenre.Name,
+                        Description: doc.Subgenre.Description
+                    },
+                    Director: {
+                        Name: doc.Director.Name,
+                        Birth: doc.Director.Birth
+                    },
+                };
+            });
+            setMovies(moviesFromApi);
+        });
+    }, []);
     if (selectedMovie) {
         return (
         <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
