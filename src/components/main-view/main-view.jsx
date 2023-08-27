@@ -9,19 +9,19 @@ export const MainView = () => {
         fetch("https://sarjohnsonmyflix-4f5de10aa490.herokuapp.com/movies")
         .then((response) => response.json())
         .then((data) => {
-            const moviesFromApi = data.docs.map((doc) => 
+            const moviesFromApi = data.docs.map((movie) => 
             {
                 return {
-                    _id: doc._id,
-                    Title: doc.Title,
-                    Description: doc.Description,
+                    _id: movie._id,
+                    Title: movie.Title,
+                    Description: movie.Description,
                     Subgenre: {
-                        Name: doc.Subgenre.Name,
-                        Description: doc.Subgenre.Description
+                        Name: movie.Subgenre.Name,
+                        Description: movie.Subgenre.Description
                     },
                     Director: {
-                        Name: doc.Director.Name,
-                        Birth: doc.Director.Birth
+                        Name: movie.Director.Name,
+                        Birth: movie.Director.Birth
                     },
                 };
             });
