@@ -9,7 +9,8 @@ export const MainView = () => {
         fetch("https://sarjohnsonmyflix-4f5de10aa490.herokuapp.com/movies")
         .then((response) => response.json())
         .then((data) => {
-            const moviesFromApi = data.docs.map((movie) => 
+            console.log("Data from API:", data);
+            const moviesFromApi = data.map((movie) => 
             {
                 return {
                     _id: movie._id,
@@ -26,6 +27,9 @@ export const MainView = () => {
                 };
             });
             setMovies(moviesFromApi);
+        })
+        .catch((error) => {
+            console.error(error);
         });
     }, []);
     if (selectedMovie) {
@@ -40,7 +44,7 @@ export const MainView = () => {
             <div>
                 {movies.map((movie) => (
                     <MovieCard 
-                    key={movie.id} 
+                    key={movie.Title} 
                     movie={movie} 
                     onMovieClick={(newSelectedMovie) => {
                         setSelectedMovie(newSelectedMovie);
