@@ -6,8 +6,8 @@ export const LoginView = ({ onLoggedIn }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = {
-            username: username,
-            password: password
+            Username: username,
+            Password: password
         };
         fetch("https://sarjohnsonmyflix-4f5de10aa490.herokuapp.com/login", {
             method: "POST",
@@ -16,7 +16,13 @@ export const LoginView = ({ onLoggedIn }) => {
             },
             body: JSON.stringify(data)
         })
-        .then((response) => response.json())
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        
         .then((data) => {
             console.log("Login response: ", data);
             if (data.user) {
@@ -28,6 +34,7 @@ export const LoginView = ({ onLoggedIn }) => {
             }
         })
         .catch((e) => {
+            console.error("Error during fetch: ", e.message);
             alert("Something went wrong");
         });
     };
