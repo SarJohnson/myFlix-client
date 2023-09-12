@@ -4,13 +4,13 @@ import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./movie-card.scss";
 
-export const MovieCard = ({ movie }) => {
+export const MovieCard = (data) => {
     return (
     <Card className="h-100">
         <Card.Body>
-            <Card.Title>{movie.Title}</Card.Title>
-            <Card.Text>{movie.Description}</Card.Text>
-            <Link to= {`/movies/${encodeURIComponent(movie.Title)}`}>
+            <Card.Title>{data?.movie.Title}</Card.Title>
+            <Card.Text>{data?.movie.Description}</Card.Text>
+            <Link to= {`/movies/${encodeURIComponent(data?.movie.id)}`}>
             <Button variant="link">
                 Open
             </Button>

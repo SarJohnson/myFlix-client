@@ -3,13 +3,13 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 export const LoginView = ({ onLoggedIn }) => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [Username, setUsername] = useState("");
+    const [Password, setPassword] = useState("");
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = {
-            Username: username,
-            Password: password
+            Username,
+            Password
         };
         fetch("https://sarjohnsonmyflix-4f5de10aa490.herokuapp.com/login", {
             method: "POST",
@@ -28,7 +28,7 @@ export const LoginView = ({ onLoggedIn }) => {
         .then((data) => {
             console.log("Login response: ", data);
             if (data.user) {
-                localStorage.setItem("user", JSON.stringify(data.user));
+                localStorage.setItem("user", JSON.stringify(data.users));
                 localStorage.setItem("token", data.token);
                 onLoggedIn(data.user, data.token);
             } else {
@@ -47,7 +47,7 @@ export const LoginView = ({ onLoggedIn }) => {
                 <Form.Label>Username:</Form.Label>
                 <Form.Control
                 type="text"
-                value={username}
+                value={Username}
                 onChange={(e) => setUsername(e.target.value)} 
                 required
                 minLength="5"
@@ -56,8 +56,8 @@ export const LoginView = ({ onLoggedIn }) => {
             <Form.Group controlId="formPassword">
                 <Form.Label>Password:</Form.Label>
                 <Form.Control
-                type="password" 
-                value={password}
+                type="Password" 
+                value={Password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 />

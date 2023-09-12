@@ -13,7 +13,7 @@ import Button from "react-bootstrap/Button";
 export const MainView = () => {
     const [movies, setMovies] = useState([]);
     //const [selectedMovie, setSelectedMovie] = useState(null);
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedUser = JSON.parse(localStorage.getItem("users"));
     const storedToken = localStorage.getItem("token");
     const [user, setUser] = useState(storedUser? storedUser: null);
     const [token, setToken] = useState(storedToken? storedToken: null);
@@ -34,7 +34,7 @@ export const MainView = () => {
         .then((data) => {
             const moviesFromApi = data.map((movie) => {
                 return {
-                    _id: movie._id,
+                    id: movie._id,
                     Title: movie.Title,
                     Description: movie.Description,
                     Subgenre: {
@@ -115,7 +115,7 @@ export const MainView = () => {
             }
             />
             <Route
-                path="/movies/:Title"
+                path="/movies/:movieId"
                 element={
                     <>
                     {!user ? (
@@ -141,7 +141,7 @@ export const MainView = () => {
                     ) : (
                         <>
                         {movies.map((movie) => (
-                            <Col className="mb-5" key={movie.Title} md={3}>
+                            <Col className="mb-5" key={movie.id} md={3}>
                             <MovieCard  
                             movie={movie} 
                         /> 
