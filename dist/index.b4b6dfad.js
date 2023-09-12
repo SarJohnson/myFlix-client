@@ -27193,7 +27193,7 @@ const MainView = ()=>{
     _s();
     const [movies, setMovies] = (0, _react.useState)([]);
     //const [selectedMovie, setSelectedMovie] = useState(null);
-    const storedUser = JSON.parse(localStorage.getItem("users"));
+    const storedUser = JSON.parse(localStorage.getItem("user"));
     const storedToken = localStorage.getItem("token");
     const [user, setUser] = (0, _react.useState)(storedUser ? storedUser : null);
     const [token, setToken] = (0, _react.useState)(storedToken ? storedToken : null);
@@ -47147,7 +47147,7 @@ $RefreshReg$(_c, "MovieView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-router":"dbWyW","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"jS1Pk","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cUpME","prop-types":"7wKI2"}],"9YtA0":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","react":"21dqq","react-bootstrap/Button":"aPzUt","react-router":"dbWyW","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"jS1Pk","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cUpME"}],"9YtA0":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -47167,13 +47167,13 @@ var _formDefault = parcelHelpers.interopDefault(_form);
 var _s = $RefreshSig$();
 const LoginView = ({ onLoggedIn })=>{
     _s();
-    const [Username, setUsername] = (0, _react.useState)("");
-    const [Password, setPassword] = (0, _react.useState)("");
+    const [username, setUsername] = (0, _react.useState)("");
+    const [password, setPassword] = (0, _react.useState)("");
     const handleSubmit = (event)=>{
         event.preventDefault();
         const data = {
-            Username,
-            Password
+            Username: username,
+            Password: password
         };
         fetch("https://sarjohnsonmyflix-4f5de10aa490.herokuapp.com/login", {
             method: "POST",
@@ -47187,7 +47187,7 @@ const LoginView = ({ onLoggedIn })=>{
         }).then((data)=>{
             console.log("Login response: ", data);
             if (data.user) {
-                localStorage.setItem("user", JSON.stringify(data.users));
+                localStorage.setItem("user", JSON.stringify(data.user));
                 localStorage.setItem("token", data.token);
                 onLoggedIn(data.user, data.token);
             } else alert("No such user");
@@ -47211,7 +47211,7 @@ const LoginView = ({ onLoggedIn })=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                         type: "text",
-                        value: Username,
+                        value: username,
                         onChange: (e)=>setUsername(e.target.value),
                         required: true,
                         minLength: "5"
@@ -47237,8 +47237,8 @@ const LoginView = ({ onLoggedIn })=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "Password",
-                        value: Password,
+                        type: "password",
+                        value: password,
                         onChange: (e)=>setPassword(e.target.value),
                         required: true
                     }, void 0, false, {
@@ -47268,7 +47268,7 @@ const LoginView = ({ onLoggedIn })=>{
         columnNumber: 9
     }, undefined);
 };
-_s(LoginView, "zwhuZmCCK0HUnKqyyFT720C/Kmw=");
+_s(LoginView, "Lrw7JeD9zj6OUWhT/IH4OIvPKEk=");
 _c = LoginView;
 var _c;
 $RefreshReg$(_c, "LoginView");
@@ -47298,16 +47298,16 @@ var _formDefault = parcelHelpers.interopDefault(_form);
 var _s = $RefreshSig$();
 const SignupView = ()=>{
     _s();
-    const [Username, setUsername] = (0, _react.useState)("");
-    const [Password, setPassword] = (0, _react.useState)("");
-    const [Email, setEmail] = (0, _react.useState)("");
+    const [username, setUsername] = (0, _react.useState)("");
+    const [password, setPassword] = (0, _react.useState)("");
+    const [email, setEmail] = (0, _react.useState)("");
     const [Birthday, setBirthday] = (0, _react.useState)("");
     const handleSubmit = (event)=>{
         event.preventDefault();
         const data = {
-            Username: Username,
-            Password: Password,
-            Email: Email,
+            Username: username,
+            Password: password,
+            Email: email,
             Birthday: Birthday
         };
         fetch("https://sarjohnsonmyflix-4f5de10aa490.herokuapp.com/users", {
@@ -47338,7 +47338,7 @@ const SignupView = ()=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                         type: "text",
-                        value: Username,
+                        value: username,
                         onChange: (e)=>setUsername(e.target.value),
                         required: true,
                         minLength: "5"
@@ -47364,8 +47364,8 @@ const SignupView = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "Password",
-                        value: Password,
+                        type: "password",
+                        value: password,
                         onChange: (e)=>setPassword(e.target.value),
                         required: true
                     }, void 0, false, {
@@ -47390,8 +47390,8 @@ const SignupView = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                        type: "Email",
-                        value: Email,
+                        type: "email",
+                        value: email,
                         onChange: (e)=>setEmail(e.target.value),
                         required: true
                     }, void 0, false, {
@@ -47447,7 +47447,7 @@ const SignupView = ()=>{
         columnNumber: 9
     }, undefined);
 };
-_s(SignupView, "3Ly2uGwm2IaM8/h5bXhOpVGqO50=");
+_s(SignupView, "iHd9cHTv2Z1ezjuBGokBcIpgr+M=");
 _c = SignupView;
 var _c;
 $RefreshReg$(_c, "SignupView");
@@ -47615,10 +47615,10 @@ var _reactBootstrap = require("react-bootstrap");
 var _s = $RefreshSig$();
 const ProfileView = ({ user, token, setUser, movies, onLogout })=>{
     _s();
-    const [Username, setUsername] = (0, _react.useState)(user.Username);
-    const [Password, setPassword] = (0, _react.useState)("");
-    const [Email, setEmail] = (0, _react.useState)(user.Email);
-    const [Birthday, setBirthday] = (0, _react.useState)(user.Birthday);
+    const [username, setUsername] = (0, _react.useState)(user.Username);
+    const [password, setPassword] = (0, _react.useState)("");
+    const [email, setEmail] = (0, _react.useState)(user.Email);
+    const [birthday, setBirthday] = (0, _react.useState)(user.Birthday);
     const [showModal, setShowModal] = (0, _react.useState)(false);
     const favoriteMovies = movies.filter((movie)=>{
         return user.FavoriteMovies.includes(movie.id);
@@ -47628,10 +47628,10 @@ const ProfileView = ({ user, token, setUser, movies, onLogout })=>{
     const handleSubmit = (event)=>{
         event.preventDefault();
         const data = {
-            Username: Username,
-            Password: Password,
-            Email: Email,
-            Birthday: Birthday
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthday: birthday
         };
         fetch(`https://sarjohnsonmyflix-4f5de10aa490.herokuapp.com/users/${user.Username}`, {
             method: "PUT",
@@ -47726,7 +47726,7 @@ const ProfileView = ({ user, token, setUser, movies, onLogout })=>{
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                                         type: "text",
-                                        value: Username,
+                                        value: username,
                                         onChange: (e)=>setUsername(e.target.value),
                                         required: true,
                                         minLength: "5"
@@ -47752,8 +47752,8 @@ const ProfileView = ({ user, token, setUser, movies, onLogout })=>{
                                         columnNumber: 17
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                                        type: "Password",
-                                        value: Password,
+                                        type: "password",
+                                        value: password,
                                         onChange: (e)=>setPassword(e.target.value),
                                         required: true
                                     }, void 0, false, {
@@ -47778,8 +47778,8 @@ const ProfileView = ({ user, token, setUser, movies, onLogout })=>{
                                         columnNumber: 17
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                                        type: "Email",
-                                        value: Email,
+                                        type: "email",
+                                        value: email,
                                         onChange: (e)=>setEmail(e.target.value),
                                         required: true
                                     }, void 0, false, {
@@ -47805,7 +47805,7 @@ const ProfileView = ({ user, token, setUser, movies, onLogout })=>{
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                                         type: "date",
-                                        value: Birthday,
+                                        value: birthday,
                                         onChange: (e)=>setBirthday(e.target.value),
                                         required: true
                                     }, void 0, false, {
@@ -47939,7 +47939,7 @@ const ProfileView = ({ user, token, setUser, movies, onLogout })=>{
         ]
     }, void 0, true);
 };
-_s(ProfileView, "p9f97Cz9RttH0SqCokNMOlrCMNM=");
+_s(ProfileView, "QFk4YLx5rMd8mhUENmS7N0jbKfo=");
 _c = ProfileView;
 var _c;
 $RefreshReg$(_c, "ProfileView");
@@ -47949,6 +47949,6 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card.jsx":"bwuIu","react-bootstrap/Button":"aPzUt","react-bootstrap/Col":"2L2I6","react-bootstrap/Form":"iBZ80","react-bootstrap/Modal":"aNVmp","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"jS1Pk","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cUpME","react-bootstrap/Row":"cMC39"}],"i5LP7":[function() {},{}],"lJZlQ":[function() {},{}]},["b5kua","4wQdg","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card.jsx":"bwuIu","react-bootstrap/Button":"aPzUt","react-bootstrap/Col":"2L2I6","react-bootstrap/Form":"iBZ80","react-bootstrap/Row":"cMC39","react-bootstrap/Modal":"aNVmp","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"jS1Pk","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"cUpME"}],"i5LP7":[function() {},{}],"lJZlQ":[function() {},{}]},["b5kua","4wQdg","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

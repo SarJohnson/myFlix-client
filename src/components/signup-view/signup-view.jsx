@@ -3,16 +3,16 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 export const SignupView = () => {
-    const [Username, setUsername] = useState("");
-    const [Password, setPassword] = useState("");
-    const [Email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
     const [Birthday, setBirthday] = useState("");
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = {
-            Username: Username,
-            Password: Password,
-            Email: Email,
+            Username: username,
+            Password: password,
+            Email: email,
             Birthday: Birthday
         };
         fetch("https://sarjohnsonmyflix-4f5de10aa490.herokuapp.com/users", {
@@ -36,7 +36,7 @@ export const SignupView = () => {
                 <Form.Label>Username:</Form.Label>
                 <Form.Control
                 type="text"
-                value={Username}
+                value={username}
                 onChange={(e) => setUsername(e.target.value)} 
                 required
                 minLength="5"
@@ -45,8 +45,8 @@ export const SignupView = () => {
             <Form.Group controlId="formPassword">
                 <Form.Label>Password:</Form.Label>
                 <Form.Control
-                type="Password" 
-                value={Password}
+                type="password" 
+                value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 />
@@ -54,8 +54,8 @@ export const SignupView = () => {
             <Form.Group controlId="formEmail">
                 <Form.Label>Email:</Form.Label>
                 <Form.Control
-                type="Email"
-                value={Email}
+                type="email"
+                value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required 
                 />

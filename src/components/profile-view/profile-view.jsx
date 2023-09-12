@@ -8,10 +8,10 @@ import Modal from "react-bootstrap/Modal";
 import { ModalHeader } from "react-bootstrap";
 
 export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
-    const [Username, setUsername] = useState(user.Username);
-    const [Password, setPassword] = useState("");
-    const [Email, setEmail] = useState(user.Email);
-    const [Birthday, setBirthday] = useState(user.Birthday);
+    const [username, setUsername] = useState(user.Username);
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState(user.Email);
+    const [birthday, setBirthday] = useState(user.Birthday);
     const [showModal, setShowModal] = useState(false);
     const favoriteMovies = movies.filter((movie) => {
         return user.FavoriteMovies.includes(movie.id)
@@ -23,10 +23,10 @@ export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = {
-            Username: Username,
-            Password: Password,
-            Email: Email,
-            Birthday: Birthday
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthday: birthday
         };
 
         fetch(`https://sarjohnsonmyflix-4f5de10aa490.herokuapp.com/users/${user.Username}`, {
@@ -79,7 +79,7 @@ export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
                 <Form.Label>Username:</Form.Label>
                 <Form.Control
                     type="text"
-                    value={Username}
+                    value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     required
                     minLength="5"
@@ -88,8 +88,8 @@ export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
                 <Form.Group controlId="formPassword">
                 <Form.Label>Password:</Form.Label>
                 <Form.Control
-                    type="Password"
-                    value={Password}
+                    type="password"
+                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     />
@@ -97,8 +97,8 @@ export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
                 <Form.Group controlId="formEmail">
                 <Form.Label>Email:</Form.Label>
                 <Form.Control
-                    type="Email"
-                    value={Email}
+                    type="email"
+                    value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     />
@@ -107,7 +107,7 @@ export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
                 <Form.Label>Birthday:</Form.Label>
                 <Form.Control
                     type="date"
-                    value={Birthday}
+                    value={birthday}
                     onChange={(e) => setBirthday(e.target.value)}
                     required
                     />
