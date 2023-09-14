@@ -65,15 +65,16 @@ export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
 
     return (
         <>
-        <span>Profile</span>
+        <h2>Profile</h2>
         <Row>
             <Col>
             <div>Username: {user.Username}</div>
             <div>Email: {user.Email}</div>
             </Col>
         </Row>
+        <br></br>
         <Row>
-            <span>Update info</span>
+            <h2>Update info</h2>
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formUsername">
                 <Form.Label>Username:</Form.Label>
@@ -112,28 +113,31 @@ export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
                     required
                     />
                 </Form.Group>
-                <Button variant="primary" type="submit">Update</Button>
+                <br></br>
+                <Button className="update-button" variant="primary" type="submit">Update</Button>
             </Form>
         </Row>
+        <br></br>
         <Row>
-            <span>Favorite movies: </span>
+            <br></br>
+            <h2>Favorite movies: </h2>
             {favoriteMovies.map((movie) => (
                 <Col className="mb-5" key={movie.id} md={4}>
                     <MovieCard movie={movie}></MovieCard>
                 </Col>
             ))}
         </Row>
-        <Button variant= "primary" onClick={handleShowModal}>
-            Delete
+        <Button className="delete-button" variant= "primary" onClick={handleShowModal}>
+            Kill Switch
         </Button>
-        <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal className="modal" show={showModal} onHide={handleCloseModal}>
             <Modal.Header closeButton>
-                <Modal.Title>Delete</Modal.Title>
+                <Modal.Title>Kill Switch</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Are you sure you want to delete? This action is permanent.</Modal.Body>
+            <Modal.Body>Are you sure you want to kill your account? This action is permanent.</Modal.Body>
             <Modal.Footer>
-                <Button variant="primary" onClick={handleDeleteUser}>Yes</Button>
-                <Button variant="secondary" onClick={handleCloseModal}>No</Button>
+                <Button className="delete-button" variant="primary" onClick={handleDeleteUser}>Yes</Button>
+                <Button className="delete-button" variant="primary" onClick={handleCloseModal}>No</Button>
             </Modal.Footer>
         </Modal>
         </>

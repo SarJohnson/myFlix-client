@@ -1,5 +1,98 @@
-$color: steelblue;
+body{
+    color: white;
+    background-color: black;
+    font-family: 'Nosifer';
+    font-size: small;
+}
 
-.my-flix {
-    color: $color;
+h2{
+    color: #cc252c;
+}
+
+.navbar{
+    margin-top: 15px;
+    margin-bottom: 35px;
+    border-radius: 8px;
+}
+
+.modal{
+    color: black;
+}
+
+.back-button{
+    background-color: #cc252c;
+    border: 1px solid #cc252c;
+    margin-left: 200px;
+}
+
+.back-button:hover{
+    background-color: #cc252c;
+    border: 1px solid #cc252c;
+    text-decoration: underline;
+}
+
+.favorite-button{
+    background-color: #cc252c;
+    border: 1px solid #cc252c;
+    margin: 20px;
+}
+
+.favorite-button:hover{
+    background-color: #cc252c;
+    border: 1px solid #cc252c;
+    text-decoration: underline;
+}
+
+.update-button{
+    background-color: #cc252c;
+    border: 1px solid #cc252c;
+}
+
+.update-button:hover{
+    background-color: #cc252c;
+    border: 1px solid #cc252c;
+    text-decoration: underline;
+}
+
+.delete-button{
+    background-color: #cc252c;
+    border: 1px solid #cc252c;
+    margin-bottom: 20px;
+}
+
+.delete-button:hover{
+    background-color: #cc252c;
+    border: 1px solid #cc252c;
+    text-decoration: underline;
+}
+
+.logout-button{
+    background-color: #cc252c;
+    border: 1px solid #cc252c;
+}
+
+.logout-button:hover{
+    background-color: #cc252c;
+    border: 1px solid #cc252c;
+    text-decoration: underline;
+}
+
+.open-button{
+    color: #cc252c;
+}
+
+.open-button:hover{
+    color: #cc252c;
+}
+
+.login-button{
+    background-color: #cc252c;
+    border: 1px solid #cc252c;
+    margin-top: 20px;
+}
+
+.login-button:hover{
+    background-color: #cc252c;
+    border: 1px solid #cc252c;
+    text-decoration: underline;
 }
