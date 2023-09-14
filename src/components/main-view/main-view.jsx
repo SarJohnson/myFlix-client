@@ -156,7 +156,8 @@ export const MainView = () => {
             {user && (
                 <Col md={1}>
                     <Button
-                    variant="secondary"
+                    className="logout-button"
+                    variant="primary"
                     onClick={onLogout}
                     >
                         Logout

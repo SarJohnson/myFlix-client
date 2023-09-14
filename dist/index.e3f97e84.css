@@ -13323,8 +13323,99 @@ textarea.form-control-lg {
   }
 }
 
-.my-flix {
-  color: #4682b4;
+body {
+  color: #fff;
+  background-color: #000;
+  font-family: Nosifer;
+  font-size: small;
+}
+
+h2 {
+  color: #cc252c;
+}
+
+.navbar {
+  border-radius: 8px;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+
+.modal {
+  color: #000;
+}
+
+.back-button {
+  background-color: #cc252c;
+  border: 1px solid #cc252c;
+  margin-left: 200px;
+}
+
+.back-button:hover {
+  background-color: #cc252c;
+  border: 1px solid #cc252c;
+  text-decoration: underline;
+}
+
+.favorite-button {
+  background-color: #cc252c;
+  border: 1px solid #cc252c;
+  margin: 20px;
+}
+
+.favorite-button:hover {
+  background-color: #cc252c;
+  border: 1px solid #cc252c;
+  text-decoration: underline;
+}
+
+.update-button {
+  background-color: #cc252c;
+  border: 1px solid #cc252c;
+}
+
+.update-button:hover {
+  background-color: #cc252c;
+  border: 1px solid #cc252c;
+  text-decoration: underline;
+}
+
+.delete-button {
+  background-color: #cc252c;
+  border: 1px solid #cc252c;
+  margin-bottom: 20px;
+}
+
+.delete-button:hover {
+  background-color: #cc252c;
+  border: 1px solid #cc252c;
+  text-decoration: underline;
+}
+
+.logout-button {
+  background-color: #cc252c;
+  border: 1px solid #cc252c;
+}
+
+.logout-button:hover {
+  background-color: #cc252c;
+  border: 1px solid #cc252c;
+  text-decoration: underline;
+}
+
+.open-button, .open-button:hover {
+  color: #cc252c;
+}
+
+.login-button {
+  background-color: #cc252c;
+  border: 1px solid #cc252c;
+  margin-top: 20px;
+}
+
+.login-button:hover {
+  background-color: #cc252c;
+  border: 1px solid #cc252c;
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=index.e3f97e84.css.map */

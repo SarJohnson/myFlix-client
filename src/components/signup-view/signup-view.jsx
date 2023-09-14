@@ -23,7 +23,7 @@ export const SignupView = () => {
             }
         }).then((response) => {
             if (response.ok) {
-                alert("Signup successful");
+                alert("Signup successful, I have all your information now");
                 window.location.reload();
             } else {
                 alert("Signup failed");
@@ -69,7 +69,7 @@ export const SignupView = () => {
                 required 
                 />
             </Form.Group>
-            <Button variant="primary" type="submit">Submit</Button>
+            <Button className="login-button" variant="primary" type="submit">Submit</Button>
         </Form>
     );
 };

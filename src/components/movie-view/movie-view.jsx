@@ -49,31 +49,31 @@ export const MovieView = ({ movies, user, setUser, token }) => {
     return (
         <div>
             <div>
-                <span>Title: </span>
+                <h5>Title: </h5>
                 <span>{movie?.Title}</span>
             </div>
             <div>
-                <span>Description: </span>
+                <h5>Description: </h5>
                 <span>{movie?.Description}</span>
             </div>
             <div>
-                <span>Subgenre: </span>
+                <h5>Subgenre: </h5>
                 <span>{movie?.Subgenre?.Name}</span>
                 <br />
-                <span>Description: </span>
+                <h5>Description: </h5>
                 <span>{movie?.Subgenre?.Description}</span>
             </div>
             <div>
-                <span>Director: </span>
+                <h5>Director: </h5>
                 <span>{movie?.Director?.Name}</span>
                 <br />
-                <span>Birth Year: </span>
+                <h5>Birth Year: </h5>
                 <span>{movie?.Director?.Birth}</span>
             </div>
             {isFavorite ? (
-                <Button onClick={removeFavorite}>Remove from favorites</Button>
+                <Button className="favorite-button" onClick={removeFavorite}>Remove from favorites</Button>
             ) : (
-                <Button onClick={addFavorite}>Add to favorites</Button>
+                <Button className="favorite-button" onClick={addFavorite}>Add to favorites</Button>
             )}
             <Link to={"/"}>
                 <Button className="back-button">Back</Button>
