@@ -32,5 +32,6 @@ MovieCard.PropTypes = {
             Name: PropTypes.string.isRequired,
             Birth: PropTypes.string.isRequired
         }),
+        Watch: PropTypes.string.isRequired,
     }).isRequired
 };

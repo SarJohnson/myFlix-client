@@ -48,6 +48,7 @@ export const MainView = () => {
                         Name: movie.Director.Name,
                         Birth: movie.Director.Birth
                     },
+                    Watch: movie.Watch,
                 };
             });
             console.log("movies from api: ", data);

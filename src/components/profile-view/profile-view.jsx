@@ -134,7 +134,7 @@ export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
             <Modal.Header closeButton>
                 <Modal.Title>Kill Switch</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Are you sure you want to kill your account? This action is permanent.</Modal.Body>
+            <Modal.Body>Are you sure you want to delete your account? This action is permanent.</Modal.Body>
             <Modal.Footer>
                 <Button className="delete-button" variant="primary" onClick={handleDeleteUser}>Yes</Button>
                 <Button className="delete-button" variant="primary" onClick={handleCloseModal}>No</Button>

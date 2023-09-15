@@ -70,6 +70,10 @@ export const MovieView = ({ movies, user, setUser, token }) => {
                 <h5>Birth Year: </h5>
                 <span>{movie?.Director?.Birth}</span>
             </div>
+            <div>
+                <h5>Watch: </h5>
+                <Link to={movie?.Watch} target="_blank">{movie?.Watch}</Link>
+            </div>
             {isFavorite ? (
                 <Button className="favorite-button" onClick={removeFavorite}>Remove from favorites</Button>
             ) : (
@@ -94,5 +98,6 @@ MovieView.PropTypes = {
             Name: PropTypes.string.isRequired,
             Birth: PropTypes.string.isRequired
         }),
+        Watch: PropTypes.string.isRequired,
     }).isRequired
 };
