@@ -74,6 +74,10 @@ export const MovieView = ({ movies, user, setUser, token }) => {
                 <h5>Watch: </h5>
                 <Link to={movie?.Watch} target="_blank">{movie?.Watch}</Link>
             </div>
+            <div>
+                <h5>Price: </h5>
+                <span>{movie?.Price}</span>
+            </div>
             {isFavorite ? (
                 <Button className="favorite-button" onClick={removeFavorite}>Remove from favorites</Button>
             ) : (
@@ -99,5 +103,6 @@ MovieView.PropTypes = {
             Birth: PropTypes.string.isRequired
         }),
         Watch: PropTypes.string.isRequired,
+        Price: PropTypes.string.isRequired,
     }).isRequired
 };

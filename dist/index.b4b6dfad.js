@@ -27227,7 +27227,8 @@ const MainView = ()=>{
                         Name: movie.Director.Name,
                         Birth: movie.Director.Birth
                     },
-                    Watch: movie.Watch
+                    Watch: movie.Watch,
+                    Price: movie.Price
                 };
             });
             console.log("movies from api: ", data);
@@ -27246,7 +27247,7 @@ const MainView = ()=>{
                 }
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 61,
+                lineNumber: 62,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -27266,7 +27267,7 @@ const MainView = ()=>{
                                 }, void 0, false)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 70,
+                                lineNumber: 71,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27286,7 +27287,7 @@ const MainView = ()=>{
                                 }, void 0, false)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 84,
+                                lineNumber: 85,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27307,7 +27308,7 @@ const MainView = ()=>{
                                 }, void 0, false)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 102,
+                                lineNumber: 103,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27333,7 +27334,7 @@ const MainView = ()=>{
                                 }, void 0, false)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 121,
+                                lineNumber: 122,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27373,13 +27374,13 @@ const MainView = ()=>{
                                 }, void 0, false)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 137,
+                                lineNumber: 138,
                                 columnNumber: 17
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 69,
+                        lineNumber: 70,
                         columnNumber: 13
                     }, undefined),
                     user && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
@@ -27391,24 +27392,24 @@ const MainView = ()=>{
                             children: "Logout"
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 177,
+                            lineNumber: 178,
                             columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 176,
+                        lineNumber: 177,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 68,
+                lineNumber: 69,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 60,
+        lineNumber: 61,
         columnNumber: 9
     }, undefined);
 };
@@ -27500,7 +27501,8 @@ MovieCard.PropTypes = {
             Name: (0, _propTypesDefault.default).string.isRequired,
             Birth: (0, _propTypesDefault.default).string.isRequired
         }),
-        Watch: (0, _propTypesDefault.default).string.isRequired
+        Watch: (0, _propTypesDefault.default).string.isRequired,
+        Price: (0, _propTypesDefault.default).string.isRequired
     }).isRequired
 };
 var _c;
@@ -47132,13 +47134,35 @@ const MovieView = ({ movies, user, setUser, token })=>{
                 lineNumber: 73,
                 columnNumber: 13
             }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                        children: "Price: "
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 78,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: movie?.Price
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 79,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 77,
+                columnNumber: 13
+            }, undefined),
             isFavorite ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                 className: "favorite-button",
                 onClick: removeFavorite,
                 children: "Remove from favorites"
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 78,
+                lineNumber: 82,
                 columnNumber: 17
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                 className: "favorite-button",
@@ -47146,7 +47170,7 @@ const MovieView = ({ movies, user, setUser, token })=>{
                 children: "Add to favorites"
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 80,
+                lineNumber: 84,
                 columnNumber: 17
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -47156,12 +47180,12 @@ const MovieView = ({ movies, user, setUser, token })=>{
                     children: "Back"
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 83,
+                    lineNumber: 87,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 82,
+                lineNumber: 86,
                 columnNumber: 13
             }, undefined)
         ]
@@ -47189,7 +47213,8 @@ MovieView.PropTypes = {
             Name: (0, _propTypesDefault.default).string.isRequired,
             Birth: (0, _propTypesDefault.default).string.isRequired
         }),
-        Watch: (0, _propTypesDefault.default).string.isRequired
+        Watch: (0, _propTypesDefault.default).string.isRequired,
+        Price: (0, _propTypesDefault.default).string.isRequired
     }).isRequired
 };
 var _c;
