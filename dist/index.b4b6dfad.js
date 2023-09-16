@@ -47334,7 +47334,7 @@ const LoginView = ({ onLoggedIn })=>{
                 className: "login-button",
                 variant: "primary",
                 type: "submit",
-                children: "Submit"
+                children: "Abandon All Hope Ye Who Enter Here"
             }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
                 lineNumber: 65,
