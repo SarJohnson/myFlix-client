@@ -13,6 +13,7 @@ h2{
     margin-top: 15px;
     margin-bottom: 35px;
     border-radius: 8px;
+    color: #cc252c;
 }
 
 .modal{
@@ -22,7 +23,8 @@ h2{
 .back-button{
     background-color: #cc252c;
     border: 1px solid #cc252c;
-    margin-left: 200px;
+    float: right;
+    clear: right;
 }
 
 .back-button:hover{
@@ -34,7 +36,9 @@ h2{
 .favorite-button{
     background-color: #cc252c;
     border: 1px solid #cc252c;
-    margin: 20px;
+    margin-bottom: 20px;
+    float: right;
+    clear: right;
 }
 
 .favorite-button:hover{
@@ -99,4 +103,14 @@ h2{
 
 .search-bar{
     margin-bottom: 20px;
+}
+
+.michael{
+    position: fixed;
+    bottom: 0px;
+    left: 80%;
+}
+
+.pennywise{
+    float: right;
 }

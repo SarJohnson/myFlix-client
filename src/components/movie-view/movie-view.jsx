@@ -48,6 +48,12 @@ export const MovieView = ({ movies, user, setUser, token }) => {
     const movie = movies.find((movie) => movie.id === movieId);
     return (
         <div>
+            <div className="pennywise">
+                <img
+                style={{ width: 200, height: 200 }}
+                src={require("../images/pennywise.gif")}
+                />
+            </div>
             <div>
                 <h5>Title: </h5>
                 <span>{movie?.Title}</span>
@@ -83,9 +89,17 @@ export const MovieView = ({ movies, user, setUser, token }) => {
             ) : (
                 <Button className="favorite-button" onClick={addFavorite}>Add to favorites</Button>
             )}
+            <div>
             <Link to={"/"}>
                 <Button className="back-button">Back</Button>
-            </Link>
+            </Link> 
+            </div>
+            <div className="michael">
+                <img
+                style={{ width: 250, height: 250 }}
+                src={require("../images/michael.gif")}
+                />
+            </div>
         </div>
     )
 }

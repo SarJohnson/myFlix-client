@@ -501,7 +501,31 @@ legend + * {
   clear: left;
 }
 
-:is(::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-fields-wrapper, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-text, ::-webkit-datetime-edit-year-field) {
+::-webkit-datetime-edit-day-field {
+  padding: 0;
+}
+
+::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+::-webkit-datetime-edit-hour-field {
+  padding: 0;
+}
+
+::-webkit-datetime-edit-minute {
+  padding: 0;
+}
+
+::-webkit-datetime-edit-month-field {
+  padding: 0;
+}
+
+::-webkit-datetime-edit-text {
+  padding: 0;
+}
+
+::-webkit-datetime-edit-year-field {
   padding: 0;
 }
 
@@ -13335,6 +13359,7 @@ h2 {
 }
 
 .navbar {
+  color: #cc252c;
   border-radius: 8px;
   margin-top: 15px;
   margin-bottom: 35px;
@@ -13345,9 +13370,10 @@ h2 {
 }
 
 .back-button {
+  float: right;
+  clear: right;
   background-color: #cc252c;
   border: 1px solid #cc252c;
-  margin-left: 200px;
 }
 
 .back-button:hover {
@@ -13357,9 +13383,11 @@ h2 {
 }
 
 .favorite-button {
+  float: right;
+  clear: right;
   background-color: #cc252c;
   border: 1px solid #cc252c;
-  margin: 20px;
+  margin-bottom: 20px;
 }
 
 .favorite-button:hover {
@@ -13420,6 +13448,16 @@ h2 {
 
 .search-bar {
   margin-bottom: 20px;
+}
+
+.michael {
+  position: fixed;
+  bottom: 0;
+  left: 80%;
+}
+
+.pennywise {
+  float: right;
 }
 
 /*# sourceMappingURL=index.e3f97e84.css.map */

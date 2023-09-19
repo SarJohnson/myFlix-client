@@ -127,6 +127,12 @@ export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
                 </Col>
             ))}
         </Row>
+        <div className="michael">
+                <img
+                style={{ width: 250, height: 250 }}
+                src={require("../images/michael.gif")}
+                />
+        </div>
         <Button className="delete-button" variant= "primary" onClick={handleShowModal}>
             Kill Switch
         </Button>

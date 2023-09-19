@@ -146,7 +146,7 @@ export const MainView = () => {
                     ) : (
                         <>
                         <Row className="search-bar">
-                            <form>
+                            <Form>
                                 <InputGroup>
                                     <Form.Control
                                     onChange={(e) => setSearch(e.target.value)}
@@ -154,7 +154,7 @@ export const MainView = () => {
                                     aria-label="Search"
                                     />
                                 </InputGroup>
-                            </form>
+                            </Form>
                         </Row>
                         {movies.filter((movie) =>
                         movie.Title.toLowerCase().includes(Search.toLowerCase())).map((movie) => (
